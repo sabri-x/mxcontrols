@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/">
-        <file>MRect.qml</file>
+    <qresource prefix="/xcqml">
+        <file>button/MPushButton.qml</file>
     </qresource>
 </RCC>
