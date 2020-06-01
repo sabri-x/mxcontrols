@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>MRect.qml</file>
+    </qresource>
+</RCC>
