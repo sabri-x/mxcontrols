@@ -12,6 +12,7 @@ Window {
     Component.onCompleted: Qt.callLater(init);
     
     function init(){
+        view.model.append({"title": qsTr("ListView扩展"),"path": "qrc:/MListViewPage.qml"});
         view.model.append({"title": qsTr("按钮"),"path": "qrc:/MButtonPage.qml"});
         view.model.append({"title": qsTr("循环视图"),"path": "qrc:/MLoopViewPage.qml"});
         view.currentIndex = 0;

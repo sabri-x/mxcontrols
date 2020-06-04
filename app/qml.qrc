@@ -4,5 +4,6 @@
         <file>MButtonPage.qml</file>
         <file>MOpenJs.js</file>
         <file>MLoopViewPage.qml</file>
+        <file>MListViewPage.qml</file>
     </qresource>
 </RCC>

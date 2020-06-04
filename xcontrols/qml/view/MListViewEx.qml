@@ -23,6 +23,8 @@ ListView {
     signal loadMore(); //发出加载更多信号
     
     maximumFlickVelocity: 4500;
+    clip: true;
+    
     header: isRefresh ? topRefCpt : null;
     footer: moreCpt;
     
