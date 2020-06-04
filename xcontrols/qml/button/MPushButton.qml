@@ -16,8 +16,8 @@ Rectangle{
     radius: height*0.25;
     
     gradient: Gradient {
-        GradientStop { position: 0.0; color: Qt.rgba(0.8,0.8,0.8,ma.opaRatio) }
-        GradientStop { position: 1.0; color: Qt.rgba(1,1,1,ma.opaRatio) }
+        GradientStop { position: 0.0; color: Qt.rgba(0.96,0.96,0.96,ma.opaRatio) }
+        GradientStop { position: 1.0; color: Qt.rgba(0.8,0.8,0.8,ma.opaRatio) }
     }
     
     MouseArea{
@@ -40,7 +40,7 @@ Rectangle{
     
     Text {
         id: textItem;
-        font.pointSize: 12;
+        font.pointSize: 10;
         anchors.centerIn: parent;
         text: qsTr("按钮");
     }

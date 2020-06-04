@@ -8,7 +8,8 @@ Item {
     Component.onCompleted: Qt.callLater(init);
     
     function init(){
-        for(var i=0;i<16;i++)
+        var len = parseInt(grid.height/grid.itemHt);
+        for(var i=0;i<len*2;i++)
             gridRep.model.append({"qmlPath": "qrc:/xcqml/button/MPushButton.qml"});
     }
     
@@ -38,7 +39,7 @@ Item {
             id: cptItem;
             width: grid.itemWd;
             height: grid.itemHt;
-            Component.onCompleted:  Qt.callLater(init);
+            Component.onCompleted: Qt.callLater(init);
             
             function init(){
                 OpenJs.buildComponent(cptItem,model.qmlPath,{"anchors.centerIn": cptItem});
