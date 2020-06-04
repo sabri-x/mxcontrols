@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>refresh_arrow.png</file>
+        <file>refresh_success.png</file>
+    </qresource>
+</RCC>

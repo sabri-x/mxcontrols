@@ -3,5 +3,6 @@
         <file>button/MPushButton.qml</file>
         <file>view/MHorLoopView.qml</file>
         <file>view/MVerLoopView.qml</file>
+        <file>view/MListViewEx.qml</file>
     </qresource>
 </RCC>

@@ -38,4 +38,5 @@ unix {
 
 RESOURCES += \
     qml/qml.qrc \
-    xqmldir.qrc
+    xqmldir.qrc \
+    image/image.qrc
