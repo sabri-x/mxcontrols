@@ -1,4 +1,4 @@
-import QtQuick 2.0
+﻿import QtQuick 2.0
 
 Rectangle{
     id: itemRoot;
@@ -13,7 +13,7 @@ Rectangle{
     
     implicitHeight: textItem.height + tpMargin*2;
     implicitWidth: textItem.width + lrMargin*2;
-    radius: height*0.25;
+    radius: height*0.10;
     
     gradient: Gradient {
         GradientStop { position: 0.0; color: Qt.rgba(0.96,0.96,0.96,ma.opaRatio) }

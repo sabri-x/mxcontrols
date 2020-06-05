@@ -20,19 +20,40 @@ Window {
     
     function changed(){
         var model = view.model.get(view.currentIndex);
+        titleItem.text = model.title;
         loader.setSource(model.path,{});
     }
     
     ColumnLayout{
         anchors.fill: parent;
         spacing: 0;
+        
         Text {
             id: titleItem;
             Layout.preferredHeight: 60;
-            Layout.alignment: Qt.AlignHCenter;
+            Layout.fillWidth: true;
+            horizontalAlignment: Text.AlignHCenter;
             verticalAlignment: Text.AlignVCenter;
-            text: qsTr("标题")
+            text: qsTr("标题");
             font.pointSize: 15;
+            
+            
+            Image {
+                id: menuImg;
+                property bool isFold: true;
+                source: isFold ? "qrc:/image/menu_3line_black.png" : "qrc:/image/arrow_dark.png";
+                height: 30;
+                width: sourceSize.width/sourceSize.height*height;
+                rotation: (isFold ? 0 : 180);
+                anchors.verticalCenter: parent.verticalCenter;
+                anchors.leftMargin: 20;
+                anchors.left: parent.left;
+                MouseArea{
+                    anchors.fill: parent;
+                    anchors.margins: -20;
+                    onClicked: menuImg.isFold = !menuImg.isFold;
+                }
+            }
         }
         
         Rectangle{
@@ -47,12 +68,28 @@ Window {
             spacing: 0;
             ListView{
                 id: view;
+                property int maxWd: 0;
                 Layout.fillHeight: true;
-                Layout.preferredWidth: 150;
+                Layout.preferredWidth: (menuImg.isFold ? 0 : maxWd);
                 model: ListModel{}
                 maximumFlickVelocity: 5000;
                 currentIndex: -1;
                 onCurrentIndexChanged: Qt.callLater(changed);
+                
+                states: [
+                    State {
+                        when: menuImg.isFold
+                        PropertyChanges {target: view; Layout.preferredWidth: 0}
+                    },
+                    State {
+                        when: !menuImg.isFold
+                        PropertyChanges {target: view; Layout.preferredWidth: 150}
+                    }
+                ]
+                
+                transitions: Transition {
+                    NumberAnimation { properties: "Layout.preferredWidth"; duration: 200; easing.type: Easing.InOutQuad }
+                }
                 
                 delegate: Rectangle{
                     width: view.width;
@@ -92,5 +129,5 @@ Window {
             }
         }
     }
-
+    
 }

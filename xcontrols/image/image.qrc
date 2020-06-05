@@ -2,5 +2,8 @@
     <qresource prefix="/image">
         <file>refresh_arrow.png</file>
         <file>refresh_success.png</file>
+        <file>menu_3line_gray.png</file>
+        <file>arrow_dark.png</file>
+        <file>menu_3line_black.png</file>
     </qresource>
 </RCC>
